@@ -1,0 +1,72 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 900px;
+  height: 450px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.left div {
+  border-bottom: 1px solid black;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 20%;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+}
+
+.epass {
+  padding: 5px 10px;
+  font-size: 1.1rem;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.remember {
+  margin-top: 10px;
+  display: flex;
+}
+
+.remember input {
+  margin-right: 10px;
+}
+.img {
+  width: 400px;
+}
+h2 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid gray;
+}
+
+.button {
+  margin-top: 30px;
+  background-color: #abbb66;
+  border: none;
+  width: 90px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+input:focus{
+    outline: none;
+}

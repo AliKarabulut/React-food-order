@@ -40,8 +40,8 @@
 }
 
 .svg-icon {
-  width: 2em;
-  height: 2em;
+  width: 25px;
+  height: 25px;
 }
 
 .svg-icon path,
@@ -50,7 +50,7 @@
   fill: #000000;
 }
 
-.svg-icon circle {
+/* .svg-icon circle {
   stroke: #ffffff;
   stroke-width: 2;
-}
+} */
