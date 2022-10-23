@@ -1,7 +1,7 @@
 import Card from "../UI/Card";
 import styles from "./UserLogin.module.css";
 import loginPic from "../../assets/Login.png";
-const UserLogin = () => {
+const UserLogin = (props) => {
   return (
     <Card className={styles.wrapper}>
       <div className={styles.left}>
@@ -30,7 +30,13 @@ const UserLogin = () => {
             <input type="checkbox" name="rememberMe" id="rememberMe" />
             <label htmlFor="rememberMe">Remember me</label>
           </div>
-          <button type="submit" className={styles.button}>Log in</button>
+          <button
+            type="submit"
+            className={styles.button}
+            onClick={props.onSignin}
+          >
+            Log in
+          </button>
         </div>
       </div>
     </Card>

@@ -4,13 +4,13 @@ import foodPic from "../../assets/food.jpg";
 import styles from "./Header.module.css";
 import User from "../User/User";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <Fragment>
       <header className={styles.header}>
         <h1>Lezzetler</h1>
         <div className={styles.user}>
-          <User></User>
+          {props.children}
           <HeaderButton />
         </div>
       </header>
