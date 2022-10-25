@@ -1,12 +1,12 @@
 import Card from "../UI/Card";
 import styles from "./UserLogin.module.css";
 import loginReg from "../../assets/Register.png";
-const UserRegister = () => {
+const UserRegister = (props) => {
   return (
     <Card className={styles.wrapper}>
       <div className={styles.left}>
         <img src={loginReg} alt="" className={styles.img} />
-        <div>Create an account</div>
+        <div onClick={props.onClicked}>Create an account</div>
       </div>
       <div className={styles.right}>
         <div className={styles.login}>
@@ -44,7 +44,7 @@ const UserRegister = () => {
             <input type="checkbox" name="Agree" id="rememberMe" />
             <label htmlFor="Agree">I agree all statements in <a href="">Terms of service</a></label>
           </div>
-          <button type="submit" className={styles.button}>Register</button>
+          <button type="submit" className={styles.button} onClick={props.onSignin}>Register</button>
         </div>
       </div>
     </Card>

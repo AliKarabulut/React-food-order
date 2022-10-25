@@ -1,9 +1,8 @@
 import { Fragment, useEffect, useState } from "react";
 import Header from "./components/Layout/Header";
-import AuthContext from "./components/Store/auth-context";
 import Login from "./components/User/Login";
 import Home from "./components/User/Home";
-import UserLogin from "./components/User/UserLogin";
+import User from "./components/User/User";
 import Card from "./components/UI/Card";
 // import UserRegister from "./components/User/UserRegister";
 
@@ -22,7 +21,6 @@ function App() {
   }, []);
 
   const loginHandler = () => {
-    localStorage.setItem("isLoggedIn", "1");
     setIsLoggedIn2(true)
   };
 
@@ -40,7 +38,7 @@ function App() {
   }
 
   return (
-    <AuthContext.Provider>
+    <Fragment>
       <Header>
         <main>
         {!isLoggedIn && <Login onLogin={loginHandler} />}
@@ -48,8 +46,8 @@ function App() {
         </main>
       </Header>
       {!isLoggedIn2 && <Card><p>adsassd</p><br /><p>adsassd</p></Card>}
-      {isLoggedIn2 && <UserLogin onSignin ={signInHandler}></UserLogin>}
-    </AuthContext.Provider>
+      {isLoggedIn2 && <User onSignin ={signInHandler}></User>}
+      </Fragment>
   );
 }
 
