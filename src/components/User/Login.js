@@ -6,7 +6,7 @@ const User = (props) => {
   return (
     <Fragment>
       {" "}
-      <button className={styles.button} onClick={props.onLogin}>
+      <button className={styles.mainmenubtn} onClick={props.onLogin}>
         <svg
           className={styles["svg-icon"]}
           viewBox="0 0 20 20"

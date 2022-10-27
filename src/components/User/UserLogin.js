@@ -22,18 +22,21 @@ const UserLogin = (props) => {
         <div className={styles.login}>
           {" "}
           <h2>Sign in</h2>
+          <form onSubmit={props.onSignin}>
           <input
             className={styles.epass}
             type="email"
             name="email"
             id="email"
             placeholder="Mail"
+            required
           />
           <input
             className={styles.epass}
             type="password"
             name="password"
             id=""
+            required
             placeholder="Password"
           />
           <div className={styles.remember}>
@@ -43,10 +46,10 @@ const UserLogin = (props) => {
           <button
             type="submit"
             className={styles.button}
-            onClick={props.onSignin}
           >
             Log in
           </button>
+          </form>
         </div>
       </div>
     </Card>

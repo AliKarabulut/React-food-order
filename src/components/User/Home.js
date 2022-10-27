@@ -1,10 +1,13 @@
 import { Fragment } from "react";
+import PersonIcon from "@mui/icons-material/Person";
+import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
+import LogoutIcon from "@mui/icons-material/Logout";
+
 import styles from "./User.module.css";
 const Home = (props) => {
   return (
-    <Fragment>
-      {" "}
-      <button className={styles.button} onClick={props.onLogout}>
+    <div className={styles.dropdown}>
+      <button className={styles.mainmenubtn} >
         <svg
           className={styles["svg-icon"]}
           viewBox="0 0 20 20"
@@ -14,7 +17,21 @@ const Home = (props) => {
         </svg>
         Hesabım
       </button>
-    </Fragment>
+      <div className={styles["dropdown-child"]}>
+        <a href="">
+          <PersonIcon className={styles.icons} />
+          <p>Profilim</p>
+        </a>
+        <a  href="">
+          <ShoppingBasketIcon className={styles.icons} />
+          <p>Siparişlerim</p>
+        </a>
+        <a href="" onClick={props.onLogout} >
+          <LogoutIcon className={styles.icons} />
+          <p>Çıkış yap</p>
+        </a>
+      </div>
+    </div>
   );
 };
 

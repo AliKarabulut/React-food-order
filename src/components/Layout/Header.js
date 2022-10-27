@@ -9,8 +9,8 @@ const Header = (props) => {
     <Fragment>
       <header className={styles.header}>
         <h1>Lezzetler</h1>
-        <div className={styles.user}>
-          {props.children}
+        <div className={styles.user + " "+ props.className}>
+          {props.children }
           <HeaderButton />
         </div>
       </header>
