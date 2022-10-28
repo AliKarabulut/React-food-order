@@ -3,10 +3,11 @@ import Header from "./components/Layout/Header";
 import Login from "./components/User/Login";
 import Home from "./components/User/Home";
 import User from "./components/User/User";
-import Card from "./components/UI/Card";
+import Meals from "./components/Meals/Meals";
 // import UserRegister from "./components/User/UserRegister";
 
 function App() {
+
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoggedIn2, setIsLoggedIn2] = useState(false);
   const [Signin, setSignin] = useState(false);
@@ -45,7 +46,7 @@ function App() {
         {(isLoggedIn && Signin) &&  <Home onLogout={logoutHandler} />}
         </main>
       </Header>
-      {!isLoggedIn2 && <Card><p>adsassd</p><br /><p>adsassd</p></Card>}
+      {!isLoggedIn2 && <Meals/>}
       {isLoggedIn2 && <User onSignin ={signInHandler}></User>}
       </Fragment>
   );
