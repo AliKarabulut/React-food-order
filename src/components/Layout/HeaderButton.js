@@ -1,8 +1,8 @@
 import styles from "./HeaderButton.module.css";
 
-const HeaderButton = () => {
+const HeaderButton = (props) => {
   return (
-    <button className={styles.button}>
+    <button className={styles.button} onClick={props.onClick}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="25"

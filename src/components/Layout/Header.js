@@ -11,7 +11,7 @@ const Header = (props) => {
         <h1>Lezzetler</h1>
         <div className={styles.user + " "+ props.className}>
           {props.children }
-          <HeaderButton />
+          <HeaderButton onClick={props.onShowCart} />
         </div>
       </header>
       <div className={styles["main-image"]}>

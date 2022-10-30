@@ -4,18 +4,29 @@ import Login from "./components/User/Login";
 import Home from "./components/User/Home";
 import User from "./components/User/User";
 import Meals from "./components/Meals/Meals";
+import Cart from "./components/Cart/Cart";
 // import UserRegister from "./components/User/UserRegister";
 
 function App() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoggedIn2, setIsLoggedIn2] = useState(false);
-  const [Signin, setSignin] = useState(false);
+  const [cartisShown, setCartisShown] = useState(false);
+  const [Signin, setSignin] = useState(true);
+
+  const showCart = () =>{
+    setCartisShown(true)
+  }
+
+  const closeCart = () =>{
+    setCartisShown(false)
+  }
+
 
   useEffect(() => {
-    const storedUserLoggedInInformatiın = localStorage.getItem("isLoggedIn");
+    const storedUserLoggedInInformation = localStorage.getItem("isLoggedIn");
 
-    if (storedUserLoggedInInformatiın === "1") {
+    if (storedUserLoggedInInformation === "1") {
       setIsLoggedIn(true);
       setSignin(true)
     }
@@ -40,7 +51,8 @@ function App() {
 
   return (
     <Fragment>
-      <Header>
+      {cartisShown && <Cart onClose={closeCart}/>}
+      <Header onShowCart={showCart}>
         <main>
         {!isLoggedIn && <Login onLogin={loginHandler} />}
         {(isLoggedIn && Signin) &&  <Home onLogout={logoutHandler} />}
