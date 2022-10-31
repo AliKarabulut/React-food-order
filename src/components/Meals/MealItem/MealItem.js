@@ -1,11 +1,22 @@
+import { useContext } from "react";
+
+
 import MealItemForm from "./MealItemForm";
 import styles from "./MealItem.module.css";
+import CartContext from "../../store/cart-context";
 
 const MealItem = (props) => {
+  const ctx = useContext(CartContext)
   const price = `₺${props.price.toFixed(2)}`;
 
   const addToCartHandler = (amount) => {
     //Contex oluşturup ona yollanacak yoksa yol uzun olur
+    ctx.addItem({
+      id: props.id,
+      name: props.name,
+      amount: amount,
+      price: props.price
+    })
   };
 
   return (

@@ -1,10 +1,11 @@
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "./components/Layout/Header";
 import Login from "./components/User/Login";
 import Home from "./components/User/Home";
 import User from "./components/User/User";
 import Meals from "./components/Meals/Meals";
 import Cart from "./components/Cart/Cart";
+import CartProvider from "./components/store/CartProvider";
 // import UserRegister from "./components/User/UserRegister";
 
 function App() {
@@ -50,7 +51,7 @@ function App() {
   }
 
   return (
-    <Fragment>
+    <CartProvider>
       {cartisShown && <Cart onClose={closeCart}/>}
       <Header onShowCart={showCart}>
         <main>
@@ -60,7 +61,7 @@ function App() {
       </Header>
       {!isLoggedIn2 && <Meals/>}
       {isLoggedIn2 && <User onSignin ={signInHandler}></User>}
-      </Fragment>
+      </CartProvider>
   );
 }
 

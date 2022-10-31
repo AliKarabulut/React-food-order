@@ -1,6 +1,13 @@
+import { useContext } from "react";
+import CartContext from "../store/cart-context";
 import styles from "./HeaderButton.module.css";
 
 const HeaderButton = (props) => {
+  const ctx = useContext(CartContext)
+
+  const numberItems = ctx.items.reduce((curNumber, item)=>{
+    return curNumber + item.amount
+  },0)
   return (
     <button className={styles.button} onClick={props.onClick}>
       <svg
@@ -19,7 +26,7 @@ const HeaderButton = (props) => {
         <path d="M2.5 2.5h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6l1.6-8.4H7.1" />
       </svg>
       Sepetim
-      <span className={styles.item}>31</span>
+      <span className={styles.item}>{numberItems}</span>
       {/* <User></User> */}
     </button>
   );
