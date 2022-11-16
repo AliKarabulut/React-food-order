@@ -54,10 +54,8 @@ function App() {
     <CartProvider>
       {cartisShown && <Cart onClose={closeCart}/>}
       <Header onShowCart={showCart}>
-        <main>
         {!isLoggedIn && <Login onLogin={loginHandler} />}
         {(isLoggedIn && Signin) &&  <Home onLogout={logoutHandler} />}
-        </main>
       </Header>
       {!isLoggedIn2 && <Meals/>}
       {isLoggedIn2 && <User onSignin ={signInHandler}></User>}
