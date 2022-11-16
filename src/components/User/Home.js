@@ -2,7 +2,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { useState } from "react";
-import styles from "./User.module.css";
+import styles from "./Button.module.css";
 
 const menu = [
   {
@@ -16,25 +16,23 @@ const menu = [
   {
     name: "Çıkış",
     icon: <LogoutIcon />,
-    func: "onLogout"
+    func: "onLogout",
   },
 ];
-
-
 
 const Home = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [func, setIsFunc] = useState(false);
 
-    const log = props =>{
-      if (props === "onLogout") {
-        setIsFunc(true)
-      }
+  const log = (props) => {
+    if (props === "onLogout") {
+      setIsFunc(true);
     }
-    
-    if (func === true) {
-      props.onLogout()
-    }
+  };
+
+  if (func === true) {
+    props.onLogout();
+  }
 
   const MenuButton = (props) => {
     return (
@@ -56,7 +54,6 @@ const Home = (props) => {
         className={styles["menu-button"]}
         onMouseEnter={() => setIsOpen(true)}
         onMouseLeave={() => setIsOpen(false)}
-
       >
         <PersonIcon className={styles["menu-icon"]} />
         <span className={styles["menu-name"]}>Hesabım</span>

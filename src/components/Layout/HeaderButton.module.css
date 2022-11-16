@@ -1,67 +1,36 @@
-.button {
-  cursor: pointer;
-  border: none;
+.menu-button {
   background-color: transparent;
+  border: 0px;
   display: flex;
   align-items: center;
-  align-items: center;
+  cursor: pointer;
   border-radius: 25px;
+  height: 100%;
 }
 
-.button:hover,
-.button:active {
-  background-color: #2c0d00;
+.menu-icon {
+  font-size: 1.8rem !important;
+  color: black;
+  transition: all 0.3s !important;
 }
 
-.svg-icon {
-  width: 2.5em;
+.menu-name {
+  font-size: 1.1rem;
 }
 
-.svg-icon path,
-.svg-icon polygon,
-.svg-icon rect {
-  fill: #000000;
+.menu-button:hover .menu-icon {
+  color: #fff9f6;
 }
 
-.svg-icon circle {
-  stroke: #000000;
-  stroke-width: 1;
+.menu-button:hover .dropdown-child {
+  display: flex;
 }
-
-
 
 .item {
-  background-color: #b94517;
-  padding: 0.25rem .5rem;
-  border-radius: 25px;
-  font-weight: 100;
+  background-color: black;
+  padding: 0.13rem 0.22rem;
+  border-radius: 5px;
+  font-weight: 500;
   margin-left: 5px;
   color: white;
-}
-
-.button:hover .item,
-.button:active .item {
-  background-color: #92320c;
-}
-
-.bump {
-  animation: bump 300ms ease-out;
-}
-
-@keyframes bump {
-  0% {
-    transform: scale(1);
-  }
-  10% {
-    transform: scale(0.9);
-  }
-  30% {
-    transform: scale(1.1);
-  }
-  50% {
-    transform: scale(1.15);
-  }
-  100% {
-    transform: scale(1);
-  }
 }

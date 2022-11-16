@@ -1,33 +1,20 @@
 import { useContext } from "react";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import CartContext from "../store/cart-context";
 import styles from "./HeaderButton.module.css";
 
 const HeaderButton = (props) => {
-  const ctx = useContext(CartContext)
+  const ctx = useContext(CartContext);
 
-  const numberItems = ctx.items.reduce((curNumber, item)=>{
-    return curNumber + item.amount
-  },0)
+  const numberItems = ctx.items.reduce((curNumber, item) => {
+    return curNumber + item.amount;
+  }, 0);
+
   return (
-    <button className={styles.button} onClick={props.onClick}>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="25"
-        height="25"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="#000000"
-        stroke-width="1"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <circle cx="10" cy="20.5" r="1" />
-        <circle cx="18" cy="20.5" r="1" />
-        <path d="M2.5 2.5h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6l1.6-8.4H7.1" />
-      </svg>
-      Sepetim
+    <button className={styles["menu-button"]} onClick={props.onClick}>
+      <ShoppingCartIcon className={styles["menu-icon"]} />
+      <span className={styles["menu-name"]}>Sepetim</span>
       <span className={styles.item}>{numberItems}</span>
-      {/* <User></User> */}
     </button>
   );
 };

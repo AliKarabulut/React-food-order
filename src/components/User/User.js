@@ -1,5 +1,4 @@
 import { Fragment, useState } from "react";
-import styles from "./User.module.css";
 import UserLogin from "./UserLogin";
 import UserRegister from "./UserRegister";
 const User = (props) => {
@@ -9,11 +8,20 @@ const User = (props) => {
     setRegister(!register);
   };
 
-
   return (
     <Fragment>
-      {register && <UserLogin onClicked={registerHandler} onSignin ={props.onSignin}></UserLogin>}
-      {!register && <UserRegister onClicked={registerHandler} onSignin ={props.onSignin}></UserRegister>}
+      {register && (
+        <UserLogin
+          onClicked={registerHandler}
+          onSignin={props.onSignin}
+        ></UserLogin>
+      )}
+      {!register && (
+        <UserRegister
+          onClicked={registerHandler}
+          onSignin={props.onSignin}
+        ></UserRegister>
+      )}
     </Fragment>
   );
 };
