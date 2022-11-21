@@ -14,12 +14,14 @@ const User = (props) => {
         <UserLogin
           onClicked={registerHandler}
           onSignin={props.onSignin}
+          onClose={props.onClose}
         ></UserLogin>
       )}
       {!register && (
         <UserRegister
           onClicked={registerHandler}
           onSignin={props.onSignin}
+          onClose={props.onClose}
         ></UserRegister>
       )}
     </Fragment>

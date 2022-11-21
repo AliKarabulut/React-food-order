@@ -17,10 +17,12 @@ function App() {
 
   const showCart = () =>{
     setCartisShown(true)
+    setIsLoggedIn2(false)
   }
 
   const closeCart = () =>{
     setCartisShown(false)
+    setIsLoggedIn2(false)
   }
 
 
@@ -57,8 +59,8 @@ function App() {
         {!isLoggedIn && <Login onLogin={loginHandler} />}
         {(isLoggedIn && Signin) &&  <Home onLogout={logoutHandler} />}
       </Header>
-      {!isLoggedIn2 && <Meals/>}
-      {isLoggedIn2 && <User onSignin ={signInHandler}></User>}
+      {<Meals/>}
+      {isLoggedIn2 && <User onSignin ={signInHandler} onClose={closeCart} ></User>}
       </CartProvider>
   );
 }
