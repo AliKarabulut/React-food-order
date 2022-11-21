@@ -9,7 +9,6 @@ const UserRegister = (props) => {
 
   return (
     <Modal onClose={props.onClose}>
-      <Card className={styles.wrapper}>
         <div className={styles.left}>
           <img src={loginReg} alt="" className={styles.img} />
           <div onClick={props.onClicked}>Create an account</div>
@@ -68,7 +67,6 @@ const UserRegister = (props) => {
             </form>
           </div>
         </div>
-      </Card>
     </Modal>
   );
 };
