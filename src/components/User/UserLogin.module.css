@@ -2,10 +2,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 900px;
-  height: 450px;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%,-50%);
+  height: 450px; 
+  /* position: absolute; */
+  /* left: 50%;
+  transform: translate(-50%,-50%); */
 }
 
 .left {

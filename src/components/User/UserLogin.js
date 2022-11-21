@@ -13,7 +13,7 @@ const UserLogin = (props) => {
   };
 
   return (
-    <Modal onClose={props.onClose}>
+    <Modal onClose={props.onClose} className={styles.wrapper}>
         <div className={styles.left}>
           <img src={loginPic} alt="" className={styles.img} />
           <div onClick={props.onClicked}>Create an account</div>
