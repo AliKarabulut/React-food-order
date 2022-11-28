@@ -10,7 +10,9 @@ const Cart = (props) => {
   const totalAmount = `₺${ctx.totalAmount.toFixed(2)}`;
   const hasItem = ctx.items.length > 0;
 
-  const cartItemRemove = (id) => {};
+  const cartItemRemove = (id) => {
+    ctx.removeItem(id)
+  };
   const cartItemAdd = (item) => {ctx.addItem({...item, amount:1})};
 
   const cartItems = (
